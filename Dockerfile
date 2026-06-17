@@ -26,6 +26,7 @@ RUN npm run build
 
 # 🔥 IMPORTANT: pastikan manifest ada
 RUN ls -la public/build
+RUN cat public/build/manifest.json || true
 
 RUN chmod -R 775 storage bootstrap/cache
 
