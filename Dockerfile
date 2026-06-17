@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libzip-dev \
     libicu-dev \
-    libicu70 \
-    libicu-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd intl zip pdo pdo_mysql
 
