@@ -28,6 +28,12 @@ RUN npm run build
 RUN ls -la public/build
 RUN cat public/build/manifest.json || true
 
+# Clear cache Laravel
+RUN php artisan config:clear
+RUN php artisan cache:clear
+RUN php artisan view:clear
+RUN php artisan optimize:clear
+
 RUN chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
