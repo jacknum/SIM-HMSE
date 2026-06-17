@@ -25,14 +25,9 @@ RUN npm ci || npm install
 RUN npm run build
 
 # 🔥 IMPORTANT: pastikan manifest ada
-RUN ls -la public/build
+RUN ls -R public/build
 RUN cat public/build/manifest.json || true
 
-# Clear cache Laravel
-RUN php artisan config:clear
-RUN php artisan cache:clear
-RUN php artisan view:clear
-RUN php artisan optimize:clear
 
 RUN chmod -R 775 storage bootstrap/cache
 
